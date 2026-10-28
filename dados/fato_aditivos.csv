@@ -1,0 +1,25 @@
+﻿aditivo_id;projeto_id;pacote_id;data;descricao;valor_brl;status
+ADT014;PRJ01;PAC04;2025-04-23;Reajuste de preço de aço estrutural conforme índice;990368,39;Em análise
+ADT022;PRJ01;PAC04;2025-05-08;Reajuste de preço de aço estrutural conforme índice;286935,36;Aprovado
+ADT019;PRJ01;PAC07;2025-05-13;Testes adicionais exigidos pela certificadora;1072197,59;Aprovado
+ADT017;PRJ01;PAC03;2025-06-16;Substituição de fornecedor de válvulas especiais;1249040,15;Aprovado
+ADT011;PRJ01;PAC01;2025-06-18;Revisão de escopo de projeto básico solicitada pelo cliente;1611727,18;Em análise
+ADT001;PRJ01;PAC04;2025-07-01;Reajuste de preço de aço estrutural conforme índice;557936,8;Aprovado
+ADT024;PRJ01;PAC04;2025-09-18;Reajuste de preço de aço estrutural conforme índice;794419,02;Aprovado
+ADT018;PRJ01;PAC03;2025-10-09;Substituição de fornecedor de válvulas especiais;1232267,92;Aprovado
+ADT021;PRJ01;PAC01;2025-12-05;Revisão de escopo de projeto básico solicitada pelo cliente;1559686,67;Em análise
+ADT012;PRJ01;PAC01;2026-01-19;Revisão de escopo de projeto básico solicitada pelo cliente;986025,91;Rejeitado
+ADT020;PRJ01;PAC06;2026-02-20;Extensão de campanha offshore por janela meteorológica;1723220,63;Aprovado
+ADT002;PRJ01;PAC01;2026-03-24;Revisão de escopo de projeto básico solicitada pelo cliente;505679,09;Aprovado
+ADT023;PRJ02;PAC04;2026-04-02;Reajuste de preço de aço estrutural conforme índice;1400590,62;Em análise
+ADT015;PRJ02;PAC07;2026-05-19;Testes adicionais exigidos pela certificadora;690184,61;Aprovado
+ADT004;PRJ02;PAC04;2026-06-20;Reajuste de preço de aço estrutural conforme índice;1744023,67;Aprovado
+ADT010;PRJ02;PAC04;2026-06-26;Reajuste de preço de aço estrutural conforme índice;1364581,33;Aprovado
+ADT006;PRJ02;PAC03;2026-06-29;Substituição de fornecedor de válvulas especiais;1228317,34;Aprovado
+ADT003;PRJ02;PAC01;2026-07-02;Revisão de escopo de projeto básico solicitada pelo cliente;1286816,25;Em análise
+ADT009;PRJ01;PAC01;2026-07-08;Revisão de escopo de projeto básico solicitada pelo cliente;901681,31;Aprovado
+ADT008;PRJ02;PAC04;2026-07-21;Reajuste de preço de aço estrutural conforme índice;1505108,77;Em análise
+ADT005;PRJ01;PAC07;2026-08-02;Testes adicionais exigidos pela certificadora;288867,2;Em análise
+ADT016;PRJ01;PAC04;2026-08-08;Reajuste de preço de aço estrutural conforme índice;1059899,61;Rejeitado
+ADT007;PRJ02;PAC06;2026-08-09;Extensão de campanha offshore por janela meteorológica;505461,47;Aprovado
+ADT013;PRJ02;PAC04;2026-08-23;Reajuste de preço de aço estrutural conforme índice;157336,87;Aprovado

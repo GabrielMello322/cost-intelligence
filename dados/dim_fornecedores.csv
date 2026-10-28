@@ -1,0 +1,32 @@
+﻿fornecedor_id;fornecedor;pacote_principal_id
+FOR001;Alfa Engenharia Consultiva;PAC01
+FOR002;Núcleo Projetos Técnicos;PAC01
+FOR003;Vetor Simulações Estruturais;PAC01
+FOR004;Prisma Engenharia;PAC01
+FOR005;Gestão Integrada Ltda;PAC02
+FOR006;Horizonte Consultoria em Projetos;PAC02
+FOR007;Pilar Planejamento;PAC02
+FOR008;Comercial Aço Forte;PAC03
+FOR009;Distribuidora Ômega Industrial;PAC03
+FOR010;Cabos e Conexões Brasil;PAC03
+FOR011;Válvulas Meridional;PAC03
+FOR012;Suprimentos Delta;PAC03
+FOR013;Metalúrgica Norte-Sul;PAC04
+FOR014;Caldeiraria Atlas;PAC04
+FOR015;Estruturas Marítimas Boreal;PAC04
+FOR016;Soldagem Premium;PAC04
+FOR017;Usinagem Rocha & Filhos;PAC04
+FOR018;TransMar Logística;PAC05
+FOR019;Rota Segura Transportes;PAC05
+FOR020;Porto Express Agenciamento;PAC05
+FOR021;Cargas Pesadas Itaúna;PAC05
+FOR022;Operações Offshore Tritão;PAC06
+FOR023;Mergulho Técnico Abissal;PAC06
+FOR024;Içamentos Colossus;PAC06
+FOR025;Embarcações Netuno;PAC06
+FOR026;Teste & Partida Serviços;PAC07
+FOR027;Comissiona Engenharia;PAC07
+FOR028;Instrumentação Sigma;PAC07
+FOR029;Segura Inspeções;PAC08
+FOR030;Laudos Técnicos Veritas;PAC08
+FOR031;Treinamentos HSE Brasil;PAC08
