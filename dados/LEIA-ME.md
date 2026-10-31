@@ -8,7 +8,7 @@ Formato dos CSVs: separador `;`, decimal `,`, UTF-8 (padrão pt-BR). Custos reai
 |---|---|---|
 | dim_projetos | 2 projetos fictícios (Atlântico e Pacífico) | projeto_id |
 | dim_pacotes | 8 pacotes de trabalho (Engenharia, Fabricação, Instalação...) | pacote_id |
-| dim_fornecedores | 30 fornecedores fictícios | fornecedor_id |
+| dim_fornecedores | 31 fornecedores fictícios | fornecedor_id |
 | dim_calendario | Datas de 2025 a 2026 | data |
 | fato_orcamento | Orçamento mensal por projeto e pacote, até o fim do projeto | projeto_id + pacote_id + mes |
 | fato_lancamentos | Notas fiscais / lançamentos de custo reais | lancamento_id |
