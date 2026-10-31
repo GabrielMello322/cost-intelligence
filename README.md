@@ -1,6 +1,6 @@
 # Cost Intelligence
 
-Sistema de inteligência de custos para projetos de engenharia: base de dados, modelo estrela e dashboard em Power BI para comparar orçado e custo real, identificar desvios e projetar o custo final. Automação e agentes de IA estão no roadmap.
+Sistema de inteligência de custos para projetos de engenharia: base de dados, modelo estrela e dashboard em Power BI para comparar orçado e custo real, identificar desvios e projetar o custo final, mais uma API em Python que expõe os mesmos números para automações e agentes de IA. Automação e agentes de IA estão no roadmap.
 
 > **Todos os dados deste projeto são fictícios.** Projetos, fornecedores, notas fiscais e valores foram gerados por script.
 
@@ -63,6 +63,20 @@ Gerados por `gerar_dados.py` (seed fixa, reprodutível). Detalhes e dicionário 
 
 Os totais do Power BI foram conferidos com um cálculo independente em Python, direto dos CSVs (por exemplo, orçado até o corte do Atlântico: R$ 38.813.510 nos dois).
 
+## API de custos (Python)
+
+API em FastAPI que responde sobre os custos **com as mesmas regras das medidas DAX**. Ela é a camada que a automação e o agente de IA vão usar para consultar os dados. Detalhes e lista de endpoints em [`api/README.md`](api/README.md).
+
+```bash
+pip install -r api/requirements-dev.txt
+python -m pytest
+python -m uvicorn api.main:app --reload
+```
+
+Depois abra <http://127.0.0.1:8000/docs> para testar os endpoints pelo navegador. Exemplo: `GET /pacotes/Fabricação?projeto=Atlântico` devolve o status Crítico, o desvio de +33,6%, o custo por categoria, os meses com maior estouro, os maiores lançamentos, os fornecedores e os aditivos do pacote.
+
+**23 testes automatizados** conferem a API contra os números validados no Power BI (por exemplo, projeção total de R$ 76.364.663).
+
 ## Como abrir
 
 1. Baixe `cost-intelligence.pbix` e abra no Power BI Desktop (Windows).
@@ -71,10 +85,11 @@ Os totais do Power BI foram conferidos com um cálculo independente em Python, d
 ## Roadmap
 
 - [x] **Fase 1:** base de dados, modelo estrela, medidas DAX e dashboard
+- [x] **API:** consulta dos custos em Python (FastAPI), com testes automatizados
 - [ ] **Fase 2:** automação (n8n ou Make) com IA para classificar os lançamentos sem categoria e alertar quando um pacote estourar o orçamento
 - [ ] **Fase 3:** agente de IA que consulta a base, explica os desvios e escreve o relatório mensal
 - [ ] **Fase 4:** aplicação onde o gestor pergunta em linguagem natural, por exemplo "por que Fabricação estourou?"
 
 ## Ferramentas
 
-Python (geração e validação dos dados), Power BI (Power Query, DAX e visualização) e Claude (apoio na construção e revisão do projeto).
+Python (geração e validação dos dados; API com FastAPI, pandas e pytest), Power BI (Power Query, DAX e visualização) e Claude (apoio na construção e revisão do projeto).
