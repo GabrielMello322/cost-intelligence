@@ -1,6 +1,6 @@
 # Cost Intelligence
 
-Sistema de inteligência de custos para projetos de engenharia: base de dados, modelo estrela e dashboard em Power BI para comparar orçado e custo real, identificar desvios e projetar o custo final, mais uma API em Python que expõe os mesmos números para automações e agentes de IA. Automação e agentes de IA estão no roadmap.
+Sistema de inteligência de custos para projetos de engenharia: base de dados, modelo estrela e dashboard em Power BI para comparar orçado e custo real, identificar desvios e projetar o custo final, uma API em Python que expõe os mesmos números e uma automação com IA (n8n + Gemini) que classifica lançamentos sem categoria. O agente de IA e o aplicativo estão no roadmap.
 
 > **Todos os dados deste projeto são fictícios.** Projetos, fornecedores, notas fiscais e valores foram gerados por script.
 
@@ -77,6 +77,17 @@ Depois abra <http://127.0.0.1:8000/docs> para testar os endpoints pelo navegador
 
 **23 testes automatizados** conferem a API contra os números validados no Power BI (por exemplo, projeção total de R$ 76.364.663).
 
+## Classificação de lançamentos com IA (n8n + Gemini)
+
+Automação no n8n que busca na API os lançamentos sem categoria, pede ao Gemini uma categoria com confiança para cada um e **só aplica sozinho o que tem confiança alta**. O restante vai para revisão manual. A saída da IA é validada antes de ser aceita, e as descrições são tratadas como dado para reduzir o risco de prompt injection.
+
+| Teste | Lançamentos | Acerto entre os aplicados automaticamente | Erros sem revisão |
+|---|---|---|---|
+| Base do projeto (fácil) | 58 | 100% | 0 |
+| Teste difícil, escrito à mão | 30 | 96,3% | 1 |
+
+Os 100% da base são otimistas, pois os dados sintéticos seguem poucos modelos de texto. Por isso existe o teste difícil, com casos de fronteira, notas vagas e tentativas de enganar a IA. Fluxos, gabaritos, script de avaliação, análise dos erros e limitações em [`n8n/README.md`](n8n/README.md).
+
 ## Como abrir
 
 1. Baixe `cost-intelligence.pbix` e abra no Power BI Desktop (Windows).
@@ -86,10 +97,11 @@ Depois abra <http://127.0.0.1:8000/docs> para testar os endpoints pelo navegador
 
 - [x] **Fase 1:** base de dados, modelo estrela, medidas DAX e dashboard
 - [x] **API:** consulta dos custos em Python (FastAPI), com testes automatizados
-- [ ] **Fase 2:** automação (n8n ou Make) com IA para classificar os lançamentos sem categoria e alertar quando um pacote estourar o orçamento
+- [x] **Fase 2, classificação:** n8n + Gemini classificam os lançamentos sem categoria, com validação e revisão humana
+- [ ] **Fase 2, alertas:** avisar quando um pacote passar de 15% de desvio
 - [ ] **Fase 3:** agente de IA que consulta a base, explica os desvios e escreve o relatório mensal
 - [ ] **Fase 4:** aplicação onde o gestor pergunta em linguagem natural, por exemplo "por que Fabricação estourou?"
 
 ## Ferramentas
 
-Python (geração e validação dos dados; API com FastAPI, pandas e pytest), Power BI (Power Query, DAX e visualização) e Claude (apoio na construção e revisão do projeto).
+Python (geração e validação dos dados; API com FastAPI, pandas e pytest; automação com n8n e Gemini), Power BI (Power Query, DAX e visualização) e Claude (apoio na construção e revisão do projeto).
